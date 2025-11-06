@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FUN&SUN × Yandex Cloud — «брошенные корзины» (схема)</title>
+  <style>
+    :root {
+      --bg: #f8fafc;       /* slate-50 */
+      --card: #ffffff;
+      --border: #e2e8f0;   /* slate-200 */
+      --muted: #64748b;    /* slate-500 */
+      --text: #1f2937;     /* slate-800 */
+      --sub: #475569;      /* slate-600 */
+      --tile: #f1f5f9;     /* slate-100 */
+      --arrow: #cbd5e1;    /* slate-300 */
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0; padding: 0;
+      background: var(--bg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+    h1 { font-size: clamp(24px, 3vw, 32px); margin: 8px 0 6px; }
+    .lead { color: var(--sub); font-size: 16px; margin: 0 0 16px; }
+    .block {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 18px;
+      margin: 16px 0;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.02);
+    }
+    .subtitle {
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .title {
+      font-weight: 700;
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    .notes { color: var(--sub); font-size: 15px; }
+    .row { display: grid; grid-template-columns: 1fr; gap: 16px; align-items: center; }
+    .row.two { grid-template-columns: 1fr 1fr; gap: 16px; }
+    @media (min-width: 860px) {
+      .row.cols-12 { grid-template-columns: 5fr 1fr 6fr; }
+    }
+    .arrow { display: none; align-items: center; justify-content: center; }
+    @media (min-width: 860px) { .arrow { display: flex; } }
+    .arrow svg { width: 40px; height: 40px; color: var(--arrow); }
+    .arrow .label { font-size: 12px; color: var(--muted); margin-right: 8px; white-space: nowrap; }
+    .section { margin-top: 20px; }
+    .tiles { display: grid; gap: 12px; grid-template-columns: 1fr; }
+    @media (min-width: 860px) { .tiles { grid-template-columns: repeat(3, 1fr); } }
+    .tile {
+      background: var(--tile);
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 14px 16px;
+    }
+    .tile .cap { color: var(--sub); font-size: 14px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
+    .badge {
+      background: var(--tile);
+      border: 1px solid #e5e7eb;
+      border-radius: 999px;
+      padding: 6px 10px;
+      font-size: 12px; color: var(--sub);
+    }
+    .foot { color: var(--muted); font-size: 12px; margin-top: 18px; }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>FUN&amp;SUN × Yandex Cloud — «брошенные корзины»</h1>
+      <p class="lead">Что приходит → куда → зачем → куда дальше. Только факты из кейса FUN&amp;SUN (Yandex Cloud).</p>
+    </header>
+
+    <!-- Источник → Робот -->
+    <section class="row cols-12">
+      <div class="block">
+        <div class="subtitle">Что приходит</div>
+        <div class="title">Событие: брошенная корзина</div>
+        <div class="notes">Пользователь добавил тур в корзину и не оформил заказ в течение 30 минут.</div>
+        <div class="badges"><span class="badge">&ge; 30 минут — считается «брошенной»</span></div>
+      </div>
+      <div class="arrow">
+        <span class="label">Куда: обработка звонком</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12h16"/><path d="M14 6l6 6-6 6"/>
+        </svg>
+      </div>
+      <div class="block">
+        <div class="subtitle">Куда попадает</div>
+        <div class="title">Голосовой робот</div>
+        <div class="notes">Партнёр: МТС Exolve. Основан на Yandex SpeechKit Brand Voice (платформа Yandex Cloud AI Studio). Интеграция с CRM.</div>
+        <div class="badges">
+          <span class="badge">SpeechKit Brand Voice</span>
+          <span class="badge">AI Studio</span>
+          <span class="badge">Интеграция: CRM</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Зачем → исходы -->
+    <section class="row cols-12 section">
+      <div class="block">
+        <div class="subtitle">Зачем</div>
+        <div class="title">Звонит и квалифицирует интерес</div>
+        <div class="notes">Робот автоматически дозванивается, уточняет готовность говорить и интерес к покупке; при необходимости переключает на менеджера.</div>
+      </div>
+      <div class="arrow">
+        <span class="label">Дальше: исход</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12h16"/><path d="M14 6l6 6-6 6"/>
+        </svg>
+      </div>
+      <div class="row two">
+        <div class="block">
+          <div class="subtitle">Куда идёт дальше</div>
+          <div class="title">Автообработка</div>
+          <div class="notes">Результат диалога фиксируется в отчёте/CRM. (В кейсе указаны отчёты, расшифровка и запись.)</div>
+        </div>
+        <div class="block">
+          <div class="subtitle">Куда идёт дальше</div>
+          <div class="title">Переключение на менеджера</div>
+          <div class="notes">Если клиент заинтересован или нужен специалист — робот переводит звонок менеджеру.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Факты и метрики -->
+    <section class="block section">
+      <div class="subtitle">Факты и метрики</div>
+      <div class="tiles" style="margin-top:10px">
+        <div class="tile"><div class="cap"><b>Сроки внедрения:</b> первый запуск — 2 недели; финальная версия — 1,5 месяца.</div></div>
+        <div class="tile"><div class="cap"><b>Охват и дозвоны:</b> 100% лидов «брошенной корзины» обрабатывает робот; дозванивается в 87% случаев; средняя длительность разговора — 36 сек.</div></div>
+        <div class="tile"><div class="cap"><b>Эффект:</b> конверсия 12% → 17% (+5 п.п.); время обработки 38 → 21 мин (−45%); нагрузка на менеджеров −30%.</div></div>
+      </div>
+      <p class="foot">Примечание: публикуются только подтверждённые факты из кейса Yandex Cloud.</p>
+    </section>
+  </main>
+</body>
+</html>
